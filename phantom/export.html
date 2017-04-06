@@ -23,205 +23,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        @import 'https://code.highcharts.com/css/highcharts.css';
-
-        #container {
-            height: 400px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        /* Link the series colors to axis colors */
-        .highcharts-color-0 {
-            fill: #df868b;
-            stroke: #df868b;
-        }
-        .highcharts-point.highcharts-color-0,
-        .highcharts-legend-item.highcharts-color-0 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-0 {
-            fill: #df868b;
-        }
-        .highcharts-tooltip.highcharts-color-0,
-        .highcharts-data-label-connector.highcharts-color-0 {
-            stroke: #df868b;
-        }
-        .highcharts-color-1 {
-            fill: #5f6ea2;
-            stroke: #5f6ea2;
-        }
-        .highcharts-point.highcharts-color-1,
-        .highcharts-legend-item.highcharts-color-1 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-1
-        {
-            fill: #5f6ea2;
-        }
-        .highcharts-tooltip.highcharts-color-1,
-        .highcharts-data-label-connector.highcharts-color-1
-        {
-            stroke: #5f6ea2;
-        }
-        .highcharts-color-2 {
-            fill: #aab0db;
-            stroke: #aab0db;
-        }
-        .highcharts-point.highcharts-color-2,
-        .highcharts-legend-item.highcharts-color-2 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-2
-        {
-            fill: #aab0db;
-        }
-        .highcharts-tooltip.highcharts-color-2,
-        .highcharts-data-label-connector.highcharts-color-2
-        {
-            stroke: #aab0db;
-        }
-        .highcharts-color-3 {
-            fill: #ac97d1;
-            stroke: #ac97d1;
-        }
-        .highcharts-point.highcharts-color-3,
-        .highcharts-legend-item.highcharts-color-3 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-3
-        {
-            fill: #ac97d1;
-        }
-        .highcharts-tooltip.highcharts-color-3,
-        .highcharts-data-label-connector.highcharts-color-3
-        {
-            stroke: #ac97d1;
-        }
-        .highcharts-color-4 {
-            fill: #31bde6;
-            stroke: #31bde6;
-        }
-        .highcharts-point.highcharts-color-4,
-        .highcharts-legend-item.highcharts-color-4 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-4
-        {
-            fill: #31bde6;
-        }
-        .highcharts-tooltip.highcharts-color-4,
-        .highcharts-data-label-connector.highcharts-color-4
-        {
-            stroke: #31bde6;
-        }
-        .highcharts-color-5 {
-            fill: #ebc471;
-            stroke: #ebc471;
-        }
-        .highcharts-point.highcharts-color-5,
-        .highcharts-legend-item.highcharts-color-5 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-5
-        {
-            fill: #ebc471;
-        }
-        .highcharts-tooltip.highcharts-color-5,
-        .highcharts-data-label-connector.highcharts-color-5
-        {
-            stroke: #ebc471;
-        }
-        .highcharts-color-6 {
-            fill: #5eacee;
-            stroke: #5eacee;
-        }
-        .highcharts-point.highcharts-color-6,
-        .highcharts-legend-item.highcharts-color-6 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-6
-        {
-            fill: #5eacee;
-        }
-        .highcharts-tooltip.highcharts-color-6,
-        .highcharts-data-label-connector.highcharts-color-6
-        {
-            stroke: #5eacee;
-        }
-        .highcharts-color-7 {
-            fill: #6fdeb9;
-            stroke: #6fdeb9;
-        }
-        .highcharts-point.highcharts-color-7,
-        .highcharts-legend-item.highcharts-color-7 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-7
-        {
-            fill: #6fdeb9;
-        }
-        .highcharts-tooltip.highcharts-color-7,
-        .highcharts-data-label-connector.highcharts-color-7
-        {
-            stroke: #6fdeb9;
-        }
-        .highcharts-color-8 {
-            fill: #d89bbe;
-            stroke: #d89bbe;
-        }
-        .highcharts-point.highcharts-color-8,
-        .highcharts-legend-item.highcharts-color-8 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-8
-        {
-            fill: #d89bbe;
-        }
-        .highcharts-tooltip.highcharts-color-8,
-        .highcharts-data-label-connector.highcharts-color-8
-        {
-            stroke: #d89bbe;
-        }
-        .highcharts-color-9 {
-            fill: #39a2c5;
-            stroke: #39a2c5;
-        }
-        .highcharts-point.highcharts-color-9,
-        .highcharts-legend-item.highcharts-color-9 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-9
-        {
-            fill: #39a2c5;
-        }
-        .highcharts-tooltip.highcharts-color-9,
-        .highcharts-data-label-connector.highcharts-color-9
-        {
-            stroke: #39a2c5;
-        }
-        .highcharts-color-10 {
-            fill: #ffa16e;
-            stroke: #ffa16e;
-        }
-        .highcharts-point.highcharts-color-10,
-        .highcharts-legend-item.highcharts-color-10 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-10
-        {
-            fill: #ffa16e;
-        }
-        .highcharts-tooltip.highcharts-color-10,
-        .highcharts-data-label-connector.highcharts-color-10
-        {
-            stroke: #ffa16e;
-        }
-        .highcharts-color-11 {
-            fill: #1d7f5e;
-            stroke: #1d7f5e;
-        }
-        .highcharts-point.highcharts-color-11,
-        .highcharts-legend-item.highcharts-color-11 .highcharts-point,
-        .highcharts-tooltip .highcharts-color-11
-        {
-            fill: #1d7f5e;
-        }
-        .highcharts-tooltip.highcharts-color-11,
-        .highcharts-data-label-connector.highcharts-color-11
-        {
-            stroke: #1d7f5e;
-        }
-
-    </style>
-
-    <style>
+        @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,600i,700,700i';
         html, body {
+            font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
             margin: 0;
+        }
+        .highcharts-root {
+            color: #666;
+            font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif!important;
+        }
+        .highcharts-title {
+            fill: #999 !important;
+            font-weight: bold;
+        }
+        .highcharts-background {
+            stroke: #ccc;
+            stroke-width: 1px;
+        }
+        .highcharts-data-label text {
+            fill: #666 !important;
+        }
+        .highcharts-legend-item text {
+            fill: #666 !important;
+            font-weight: normal;
         }
     </style>
 
     <script>
         /*
  Highstock JS v5.0.10 (2017-03-31)
-
  (c) 2009-2016 Torstein Honsi
 
  License: www.highcharts.com/license
@@ -1000,8 +830,7 @@ getExtremesFromAll:!0,bindAxes:function(){var a={endOnTick:!1,gridLineWidth:0,li
     Anyway, here is the fix:
 
  -->
-<div style="font-family: 'Unica One';width:0px;height:0px;">:(</div>
-<div style="font-family: 'Signika';width:0px;height:0px;">:(</div>
+<div style="font-family: 'Source Sans Pro';width:0px;height:0px;">:(</div>
 
 <div id="highcharts">
     <div style="padding:5px;display:none;">
