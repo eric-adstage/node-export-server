@@ -11,3 +11,6 @@ test.js
 /style.css
 
 /phantom/style.css
+
+*.un~
+*.swp
